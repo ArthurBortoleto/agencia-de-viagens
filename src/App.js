@@ -1,291 +1,105 @@
 import React from "react";
 import {
-  FaHotel,
-  FaPlane,
-  FaWalking,
-  FaBus,
-  FaStar,
-  FaStarHalfAlt,
   FaMapMarkerAlt,
   FaPhone,
   FaWhatsapp,
   FaEnvelope,
-  FaHome,
-  FaMapMarkedAlt,
-  FaSuitcase,
-  FaComments,
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
 } from "react-icons/fa";
 import "./App.css";
-import Flag from "react-world-flags";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import Banner from "./components/banner";
+import Destino from "./components/destino";
+import Pacotes from "./components/pacotes";
+import Depoimento from "./components/depoimentos";
 
 function App() {
   return (
     <div className="App">
-      <header className="header">
-        <h1>Senai Viagens</h1>
-        <nav>
-          <ul>
-            <li>
-              <a href="#home">
-                <FaHome /> HOME
-              </a>
-            </li>
-            <li>
-              <a href="#destinos">
-                <FaMapMarkedAlt /> DESTINOS
-              </a>
-            </li>
-            <li>
-              <a href="#pacotes">
-                <FaSuitcase /> PACOTES
-              </a>
-            </li>
-            <li>
-              <a href="#depoimentos">
-                <FaComments /> DEPOIMENTOS
-              </a>
-            </li>
-            <li>
-              <a href="#contato">
-                <FaEnvelope /> CONTATO
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <section className="hero">
-        <div className="hero-content">
-          <h2>Explore o Mundo com a Senai Viagens</h2>
-          <p>
-            Oferecemos os melhores pacotes de viagens para você e sua família.
-            Experiências inesquecíveis aguardam você!
-          </p>
-          <div className="hero-buttons">
-            <button className="btn-saiba-mais">Saiba Mais</button>
-            <button className="btn-reserve-agora">Reserve Agora</button>
-          </div>
-        </div>
-      </section>
+      <Header/>
+      <Banner/>
       <section id="destinos" className="destinos-populares">
-        <h2>Destinos Populares</h2>
+      <h2>Destinos Populares</h2>
         <div className="destinos-grid">
-          <div className="card-destino">
-            <img
-              src="https://oficinadeinverno.com.br/cdn/shop/articles/eiffel-tower-sunrise1.jpg?v=1659494576"
-              alt="Paris"
-              className="imagem-destino"
-            />
-            <h3>
-              <Flag code="FRA" height="16" className="bandeira" /> Paris
-            </h3>
-            <p>
-              Paris, conhecida como a cidade do amor, oferece uma mistura de
-              cultura, arte e história. Visite a Torre Eiffel, o Museu do Louvre
-              e explore as charmosas ruas de Montmartre.
-            </p>
-          </div>
-          <div className="card-destino">
-            <img
-              src="https://classic.exame.com/wp-content/uploads/2017/10/ny-1.jpg?quality=70&strip=info&w=1024"
-              alt="Nova York"
-              className="imagem-destino"
-            />
-            <h3>
-              <Flag code="USA" height="16" className="bandeira" /> Nova York
-            </h3>
-            <p>
-              Nova York, a cidade que nunca dorme, é um centro global de
-              cultura, moda e finanças. Explore a Times Square, o Central Park e
-              desfrute de uma variedade de espetáculos na Broadway.
-            </p>
-          </div>
-          <div className="card-destino">
-            <img
-              src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo/toquio-pontos-turisticos.jpg"
-              alt="Tóquio"
-              className="imagem-destino"
-            />
-            <h3>
-              <Flag code="JPN" height="16" className="bandeira" /> Tóquio
-            </h3>
-            <p>
-              Tóquio é uma metrópole vibrante onde a tradição encontra a
-              modernidade. Visite o Templo Senso-ji, o cruzamento de Shibuya e
-              experimente a culinária local em izakayas e restaurantes.
-            </p>
-          </div>
+          <Destino
+          image="https://oficinadeinverno.com.br/cdn/shop/articles/eiffel-tower-sunrise1.jpg?v=1659494576"
+          name="Paris"
+          flag="FRA"
+          description="
+          Paris, conhecida como a cidade do amor, oferece uma mistura de
+          cultura, arte e história. Visite a Torre Eiffel, o Museu do Louvre
+          e explore as charmosas ruas de Montmartre."
+          />
+          <Destino
+          image="https://classic.exame.com/wp-content/uploads/2017/10/ny-1.jpg?quality=70&strip=info&w=1024"
+          name="Nova York"
+          flag="USA"
+          description="Nova York, a cidade que nunca dorme, é um centro global de
+          cultura, moda e finanças. Explore a Times Square, o Central Park e
+          desfrute de uma variedade de espetáculos na Broadway."
+          />
+          <Destino
+          image="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo/toquio-pontos-turisticos.jpg"
+          name="Tóquio"
+          flag="JPN"
+          description="Tóquio é uma metrópole vibrante onde a tradição encontra a
+          modernidade. Visite o Templo Senso-ji, o cruzamento de Shibuya e
+          experimente a culinária local em izakayas e restaurantes."
+          />
         </div>
       </section>
 
       <section id="pacotes" className="pacotes-viagem">
         <h2>Pacotes de Viagem</h2>
         <div className="pacotes-grid">
-          <div className="card-pacote">
-            <div className="pacote-header">
-              <h3>Pacote Europa</h3>
-              <div className="preco">
-                <span className="preco-anterior">R$ 6.000</span>
-                <span className="preco-atual">R$ 5.000</span>
-              </div>
-            </div>
-            <p>
-              Aproveite 7 dias inesquecíveis em Paris, Londres e Roma, com
-              visitas guiadas aos pontos turísticos mais emblemáticos,
-              hospedagem em hotéis 4 estrelas e passagens aéreas inclusas.
-            </p>
-            <p>Incluem:</p>
-            <ul>
-              <li>
-                <FaHotel /> Hospedagem em hotéis 4 estrelas
-              </li>
-              <li>
-                <FaPlane /> Passagens aéreas ida e volta
-              </li>
-              <li>
-                <FaWalking /> Passeios guiados nas cidades
-              </li>
-              <li>
-                <FaBus /> Transporte entre as cidades
-              </li>
-            </ul>
-            <button type="button" className="btn-comprar">
-              Comprar
-            </button>
-          </div>
-          <div className="card-pacote">
-            <div className="pacote-header">
-              <h3>Pacote EUA</h3>
-              <div className="preco">
-                <span className="preco-anterior">R$ 5.500</span>
-                <span className="preco-atual">R$ 4.500</span>
-              </div>
-            </div>
-            <p>
-              Explore as cidades vibrantes de Nova York e Los Angeles por 7
-              dias, com hospedagem em hotéis 4 estrelas, passagens aéreas e
-              tours guiados pelos pontos mais famosos.
-            </p>
-            <p>Incluem:</p>
-            <ul>
-              <li>
-                <FaHotel /> Hospedagem em hotéis 4 estrelas
-              </li>
-              <li>
-                <FaPlane /> Passagens aéreas ida e volta
-              </li>
-              <li>
-                <FaWalking /> Passeios guiados nas cidades
-              </li>
-              <li>
-                <FaBus /> Transporte entre as cidades
-              </li>
-            </ul>
-            <button type="button" className="btn-comprar">
-              Comprar
-            </button>
-          </div>
-          <div className="card-pacote">
-            <div className="pacote-header">
-              <h3>Pacote Ásia</h3>
-              <div className="preco">
-                <span className="preco-anterior">R$ 7.000</span>
-                <span className="preco-atual">R$ 6.000</span>
-              </div>
-            </div>
-            <p>
-              Descubra a cultura e modernidade de Tóquio, Seul e Pequim em uma
-              viagem de 10 dias, com hospedagem luxuosa, passagens aéreas
-              inclusas e tours guiados.
-            </p>
-            <p>Incluem:</p>
-            <ul>
-              <li>
-                <FaHotel /> Hospedagem em hotéis 4 estrelas
-              </li>
-              <li>
-                <FaPlane /> Passagens aéreas ida e volta
-              </li>
-              <li>
-                <FaWalking /> Passeios guiados nas cidades
-              </li>
-              <li>
-                <FaBus /> Transporte entre as cidades
-              </li>
-            </ul>
-            <button type="button" className="btn-comprar">
-              Comprar
-            </button>
-          </div>
-          <div className="card-pacote">
-            <div className="pacote-header">
-              <h3>Pacote América do Sul</h3>
-              <div className="preco">
-                <span className="preco-anterior">R$ 4.000</span>
-                <span className="preco-atual">R$ 3.500</span>
-              </div>
-            </div>
-            <p>
-              Desfrute de 7 dias encantadores em Buenos Aires, Santiago e Lima,
-              com hospedagem em hotéis 4 estrelas, passagens aéreas e passeios
-              guiados pelos principais pontos turísticos.
-            </p>
-            <p>Incluem:</p>
-            <ul>
-              <li>
-                <FaHotel /> Hospedagem em hotéis 4 estrelas
-              </li>
-              <li>
-                <FaPlane /> Passagens aéreas ida e volta
-              </li>
-              <li>
-                <FaWalking /> Passeios guiados nas cidades
-              </li>
-              <li>
-                <FaBus /> Transporte entre as cidades
-              </li>
-            </ul>
-            <button type="button" className="btn-comprar">
-              Comprar
-            </button>
-          </div>
+          <Pacotes
+          name="Pacote Europa"
+          valorAnterior="R$ 6000"
+          valorAtual="R$ 5000"
+          description="Aproveite 7 dias inesquecíveis em Paris, Londres e Roma, com
+          visitas guiadas aos pontos turísticos mais emblemáticos,
+          hospedagem em hotéis 4 estrelas e passagens aéreas inclusas."
+          />
+          <Pacotes
+          name="Pacote EUA"
+          valorAnterior="R$ 5500"
+          valorAtual="R$ 4500"
+          description="Explore as cidades vibrantes de Nova York e Los Angeles por 7 dias, com hospedagem em hotéis 4 estrelas, passagens aéreas e tours guiados pelos pontos mais famosos."
+          />
+          <Pacotes
+          name="Pacote Ásia"
+          valorAnterior="R$ 7000"
+          valorAtual="R$ 6000"
+          description="Descubra a cultura e modernidade de Tóquio, Seul e Pequim em uma viagem de 10 dias, com hospedagem luxuosa, passagens aéreas inclusas e tours guiados."
+          />
+          <Pacotes
+          name="Pacote América do Sul"
+          valorAnterior="R$ 4000"
+          valorAtual="R$ 3500"
+          description="Desfrute de 7 dias encantadores em Buenos Aires, Santiago e Lima, com hospedagem em hotéis 4 estrelas, passagens aéreas e passeios guiados pelos principais pontos turísticos."
+          />
         </div>
       </section>
 
       <section id="depoimentos" className="depoimentos">
         <h2>Depoimentos</h2>
         <div className="depoimentos-grid">
-          <div className="card-depoimento">
-            <div className="depoimento-info">
-              <h3>João Silva</h3>
-              <blockquote>Foi a melhor viagem da minha vida!</blockquote>
-            </div>
-          </div>
-          <div className="card-depoimento">
-            <div className="depoimento-info">
-              <h3>Maria Santos</h3>
-              <blockquote>
-                Experiência incrível e atendimento excelente.
-              </blockquote>
-            </div>
-          </div>
-          <div className="card-depoimento">
-            <div className="depoimento-info">
-              <h3>Ana Costa</h3>
-              <blockquote>Recomendo a todos, vale cada centavo.</blockquote>
-            </div>
-          </div>
-          <div className="card-depoimento">
-            <div className="depoimento-info">
-              <h3>Pedro Oliveira</h3>
-              <blockquote>
-                Excelente custo-benefício e ótimos guias turísticos.
-              </blockquote>
-            </div>
-          </div>
+          <Depoimento
+          name="João Silva"
+          repost="Foi a melhor viagem da minha vida!"
+          />
+          <Depoimento
+          name="Maria Santos"
+          repost="Experiência incrível e atendimento excelente"
+          />
+          <Depoimento
+          name="Ana Costa"
+          repost="Recomendo a todos, vale cada centavo"
+          />
+          <Depoimento
+          name="Pedro Oliveira"
+          repost="Excelente custo-benefício e ótimos guias turísticos"
+          />
         </div>
       </section>
       <section id="contato" className="contato">
@@ -336,30 +150,7 @@ function App() {
           </div>
         </div>
       </section>
-
-      <footer className="footer">
-        <div className="social-links">
-          <a href="#facebook">
-            <FaFacebook /> Facebook
-          </a>
-          <a href="#twitter">
-            <FaTwitter /> Twitter
-          </a>
-          <a href="#instagram">
-            <FaInstagram /> Instagram
-          </a>
-        </div>
-        <p>
-          Desenvolvido por{" "}
-          <a
-            href="https://github.com/ma-nobrega"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Matheus Nobrega
-          </a>
-        </p>
-      </footer>
+      <Footer/>
     </div>
   );
 }
